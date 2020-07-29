@@ -14,7 +14,7 @@
             type="header"
             :data="key"
             :headers="headers"
-            :withSorting="columnsWithSorting.includes(key)"
+            :withSorting="columnsWithSorting && columnsWithSorting.includes(key)"
             @sort="(type, key) => $emit('sort', type, key)"
           )
       tbody(v-if="data.length")
@@ -44,7 +44,6 @@ export default {
     },
     columnsWithSorting: {
       type: Array,
-      required: true,
     },
   },
   components: { BaseTableData },
