@@ -30,7 +30,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>kodix-spa-core</v-toolbar-title>
     </v-app-bar>
-    <v-main>
+    <v-main class="main">
       <router-view />
     </v-main>
   </v-app>
@@ -51,4 +51,8 @@ export default {
   box-sizing: border-box
 .full-height
   height: 100%
+.main
+  height: calc(100vh - 64px)
+  min-height: 600px
+  overflow: hidden
 </style>

@@ -87,8 +87,6 @@ export default {
 
 <style lang="sass">
   .services
-    height: 100vh
-    min-height: 600px
+    height: 100%
     padding: 30px 0
-    overflow: hidden
 </style>

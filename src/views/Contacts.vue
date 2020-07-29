@@ -38,3 +38,9 @@ export default {
   },
 };
 </script>
+
+<style lang="sass">
+  .contacts
+    height: 100%
+    padding: 30px 0
+</style>
