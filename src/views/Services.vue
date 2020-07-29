@@ -67,9 +67,19 @@ export default {
   },
   methods: {
     sortServices(type, key) {
-      return type === 'ascending'
-        ? this.services.sort((a, b) => new Date(a[key]).getTime() - new Date(b[key]).getTime())
-        : this.services.sort((a, b) => new Date(b[key]).getTime() - new Date(a[key]).getTime());
+      if (key === 'payment_date') {
+        const parsingData = (data) => new Date(data[key]).getTime();
+        if (type === 'ascending') {
+          this.services.sort((a, b) => parsingData(a) - parsingData(b));
+        } else {
+          this.services.sort((a, b) => parsingData(b) - parsingData(a));
+        }
+      }
+      if (type === 'ascending') {
+        this.services.sort((a, b) => a[key] - b[key]);
+      } else {
+        this.services.sort((a, b) => b[key] - a[key]);
+      }
     },
   },
 };
