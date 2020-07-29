@@ -10,6 +10,11 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Services.vue'),
   },
   {
+    path: '/contacts',
+    name: 'Contacts',
+    component: () => import(/* webpackChunkName: "contacts" */ '../views/Contacts.vue'),
+  },
+  {
     path: '*',
     redirect: { name: 'Services' },
   },
