@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     header() {
-      if (!this.headers) return this.data;
+      if (!this.headers) return this.data; // TODO: Optional chaining
       return this.headers[this.data] || this.data;
     },
   },
